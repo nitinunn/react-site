@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'bulma/css/bulma.css'
+import Header from './components/Header.react'
+import Dashboard from './pages/Dashboard.react'
 
 class App extends Component {
 
@@ -9,7 +10,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=kanye')
+    fetch('https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=joke')
     .then( res => res.json() )
     .then( json => json.data.image_url )
     .then( (imageUrl) => {
@@ -23,11 +24,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2 className="rainbow">#นิตินันทน์</h2>
+        <div className="container">
+          <Header />
+          <Dashboard />
         </div>
-        <img src={this.state.imageUrl} alt="" />
       </div>
     );
   }

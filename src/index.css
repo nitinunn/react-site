@@ -11,3 +11,14 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
 }
+
+img {
+    height: auto;
+    width: 100%;
+}
+
+@media (min-width: 786px) {
+    img {
+        width: 50%;
+    }
+}
